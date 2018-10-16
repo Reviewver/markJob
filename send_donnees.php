@@ -3,8 +3,8 @@
 try {
 include("connect.php");
 
-$requete_create_table = 'CREATE TABLE demande_entreprise (nom VARCHAR(100))';
-$requete_send_data = 'INSERT INTO demande_entreprise VALUES (:company_name) ';
+$requete_create_table = 'CREATE TABLE demande_entreprise (nom VARCHAR(100), date DATE)';
+$requete_send_data = 'INSERT INTO demande_entreprise VALUES (:company_name, NOW()) ';
 
 $connect_mysql->query($requete_create_table);
 

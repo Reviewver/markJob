@@ -10,15 +10,27 @@
 				<h1>Affichage des demandes en cours</h1>
 				<?php include("menu.php"); ?>
 			</header>
-			
+			<table class="table table-striped">
+			<thead>
+				<tr>
+				<th>Nom de l'entreprise</th>
+				<th> Date</th>
+				</tr>
+			</thead>
+			<tbody>
 			<?php
 			include("connect.php");
 			$requete_display_data = 'SELECT * FROM `demande_entreprise`';
 			
 			foreach  ($connect_mysql->query($requete_display_data) as $row) {
-				print "<p>" . $row['nom'] . "</p>";
+				print "<tr>";
+				print "<td>" . $row['nom'] . "</td>";
+				print "<td>" . date('d/m/Y',strtotime($row['date'])) . "</td>";
+				print "</tr>";
 			}
 			?>
+			</tbody>
+				</table>
 
 		</div>
 	</body>
