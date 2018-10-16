@@ -14,7 +14,8 @@
 			<thead>
 				<tr>
 				<th>Nom de l'entreprise</th>
-				<th> Date</th>
+				<th>Date</th>
+				<th>Statut</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,6 +27,7 @@
 				print "<tr>";
 				print "<td>" . $row['nom'] . "</td>";
 				print "<td>" . date('d/m/Y',strtotime($row['date'])) . "</td>";
+				print "<td>" . $row['statut'] . "</td>";
 				print "</tr>";
 			}
 			?>
