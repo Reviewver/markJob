@@ -16,6 +16,10 @@
 					<label for="company_name">Nom de l'entreprise : </label>
 					<input name="company_name" class="form-control" id="company_name" type="text"/>
 				</div>
+				<div class="form-group"/>
+					<label for="company_url">Site web de l'entreprise : </label>
+					<input name="company_url" class="form-control" id="company_url" type="url"/>
+				</div>
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
 
