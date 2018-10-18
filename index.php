@@ -20,6 +20,10 @@
 					<label for="company_url">Site web de l'entreprise : </label>
 					<input name="company_url" class="form-control" id="company_url" type="url"/>
 				</div>
+				<div class="form-group"/>
+					<label for="company_address">Adresse de l'entreprise : </label>
+					<input name="company_address" class="form-control" id="company_address"/>
+				</div>
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
 
