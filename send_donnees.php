@@ -16,7 +16,7 @@ $name_company = htmlspecialchars($_POST['company_name']);
 $url_company = htmlspecialchars($_POST['company_url']);
 $address_company = htmlspecialchars($_POST['company_address']);
 $company_phone = htmlspecialchars($_POST['company_phone']);
-if(!$prepare_requete->execute(array(':company_name' => $name_company, ':company_address' => $address_company, ':company_phone' => $company_phone, ':company_url' => $url_company, ':statut' => "Candidature envoyée")))
+if(!$prepare_requete->execute(array(':company_name' => $name_company, ':company_address' => $address_company, ':company_phone' => $company_phone, ':company_url' => $url_company, ':statut' => "En attente de réponse")))
 {
 	echo "Erreur";
 }
