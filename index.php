@@ -24,6 +24,10 @@
 					<label for="company_address">Adresse de l'entreprise : </label>
 					<input name="company_address" class="form-control" id="company_address"/>
 				</div>
+				<div class="form-group"/>
+					<label for="company_phone">Téléphone de l'entreprise : </label>
+					<input name="company_phone" class="form-control" id="company_phone" type="tel"/>
+				</div>
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
 

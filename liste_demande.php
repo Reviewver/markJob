@@ -15,6 +15,7 @@
 				<tr>
 				<th>Nom de l'entreprise</th>
 				<th>Adresse de l'entreprise</th>
+				<th>Téléphone</th>
 				<th>Site web de l'entreprise</th>
 				<th>Date</th>
 				<th>Statut</th>
@@ -29,6 +30,7 @@
 				print "<tr>";
 				print "<td>" . $row['nom'] . "</td>";
 				print "<td>" . $row['address'] . "</td>";
+				print "<td>" . $row['phone'] . "</td>";
 				?><td><a href="<?php echo $row['url']?>"><?php echo $row['url']?></a></td><?php
 				print "<td>" . date('d/m/Y',strtotime($row['date'])) . "</td>";
 				print "<td>" . $row['statut'] . "</td>";
