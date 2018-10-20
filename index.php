@@ -28,6 +28,10 @@
 					<label for="company_phone">Téléphone de l'entreprise : </label>
 					<input name="company_phone" class="form-control" id="company_phone" type="tel"/>
 				</div>
+				<div class="form-group"/>
+					<label for="company_email">Mail de l'entreprise : </label>
+					<input name="company_email" class="form-control" id="company_email" type="email"/>
+				</div>
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
 
