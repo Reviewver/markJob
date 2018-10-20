@@ -1,0 +1,12 @@
+bd8d302 Version 0.1-alpha
+2c42284 Ajout de la liste déroulante permettant de sélectionner le type d'envoie : par email, par courrier, par site web
+054898c Ajout de la possibilité d'ajouter l'adresse mail de l'entreprise
+193ce50 Changement du statut enregistré quand une demande est envoyée
+27b554f Ajout de la possibilité d'ajouter le numéro de téléphone de l'entreprise
+c119940 Ajout de la possibilité d'ajouter l'adresse de l'entreprise
+e91baab Ajout de la possibilité d'enregistrer l'url du site web de l'entreprise
+493129a Le statut "Candidature envoyée" est enregistrée à châques demandes
+84f775b Ajout de l'enregistrement automatique de la date à châque demande à une entreprise
+627f79d Ajout de la possibilité d'enregistrer le nom de l'entreprise dans la page enregistrement des demandes et de lister les entreprise dans la page affichage des demandes en cours
+4cd0d95 Ajout de la page avec le titre sur l'enregistrement des demandes
+48488a0 Ajout de la librairie bootstrap

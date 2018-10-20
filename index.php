@@ -43,6 +43,9 @@
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
 
+					<footer>
+		Version 0.1-alpha
+		</footer>
 		</div>
 	</body>
 </html>
