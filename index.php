@@ -32,6 +32,14 @@
 					<label for="company_email">Mail de l'entreprise : </label>
 					<input name="company_email" class="form-control" id="company_email" type="email"/>
 				</div>
+				<div class="form-group"/>
+				<label for="envoie">Envoie : </label>
+					<select name="company_send" id="envoie" class="form-control">
+						<option value="E-mail">par e-mail</option>
+						<option value="Courrier">par courrier</option>
+						<option value="Site web">par site web</option>
+					</select>
+				</div>
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
 

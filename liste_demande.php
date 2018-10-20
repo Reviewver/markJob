@@ -18,6 +18,7 @@
 				<th>Téléphone</th>
 				<th>E-mail</th>
 				<th>Site web de l'entreprise</th>
+				<th>Envoie par</th>
 				<th>Date</th>
 				<th>Statut</th>
 				</tr>
@@ -34,6 +35,7 @@
 				print "<td>" . $row['phone'] . "</td>";
 				print "<td>" . $row['email'] . "</td>";
 				?><td><a href="<?php echo $row['url']?>"><?php echo $row['url']?></a></td><?php
+				print "<td>" . $row['send'] . "</td>";
 				print "<td>" . date('d/m/Y',strtotime($row['date'])) . "</td>";
 				print "<td>" . $row['statut'] . "</td>";
 				print "</tr>";
