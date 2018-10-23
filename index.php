@@ -2,6 +2,7 @@
 	<head>
 		<title>Enregistrement des demandes envoyées au entreprise</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap-4.1.3-dist/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
 	</head>
 	<body>
 		<div class="container">
@@ -40,12 +41,27 @@
 						<option value="Site web">par site web</option>
 					</select>
 				</div>
+				<button class="btn btn-primary" id="copyEmail" type="button">Copier l'adresse email</button>
+				<button class="btn btn-primary" id="copyObjet" type="button">Copier l'objet de l'e-mail</button>
+				<button class="btn btn-primary" id="copy" type="button">Copier l'e-mail</button>
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
-
+			
+			<form action="save_mail.php" method="post"/>
+			<div class="form-group">
+			<label for="objet">Objet du mail : </label>
+			<input class="form-control" id="objet" name="objetmail" value="<?php include("objet_mail.txt"); ?>"/>
+			</div>
+			<div class="form-group">
+			<label for="to-copy">Contenue du mail : </label>
+			<textarea rows="10" class="form-control" id="to-copy" name="mail"><?php include("mail.txt"); ?></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary" type="button">Sauvegarder le mail</button>
+			</form>
 					<footer>
 		Version 0.1-alpha
 		</footer>
 		</div>
+		<script src="copy.js"></script>
 	</body>
-</html>
+ </html>
