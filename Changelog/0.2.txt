@@ -1,0 +1,4 @@
+6adef25 Version 0.2-alpha
+85f8d42 Exclusion des fichiers txt de git
+253b763 Ajout du champ permettant de modifier le mail d'enregistrer ses modifications et des boutons permettant de copier l'adresse mail, l'objet du mail et le contenue du mail
+dc1337e Le champ adresse change de position dans la page

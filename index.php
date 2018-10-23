@@ -59,7 +59,7 @@
 			<button type="submit" class="btn btn-primary" type="button">Sauvegarder le mail</button>
 			</form>
 					<footer>
-		Version 0.1-alpha
+		Version 0.2-alpha
 		</footer>
 		</div>
 		<script src="copy.js"></script>
