@@ -3,6 +3,7 @@
 		<meta charset="utf-8">
 		<title>Affichage des demandes en cours</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap-4.1.3-dist/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
 	</head>
 	<body>
 		<div class="container">
