@@ -15,7 +15,7 @@
 			<input type="hidden" name="id" value="<?php echo "".$_POST['id']."" ?>"></input>
 			<div class="form-groupe col-sm-12">
 			<label for="reponse">Réponse</label>
-            <input type="text" name="reponse" id="reponse">
+            <textarea class="col-sm-12" type="text" name="reponse" id="reponse"></textarea>
 			</div>
 			<div class="form-groupe col-sm-12">
 			<label for="oui">Oui</label>
