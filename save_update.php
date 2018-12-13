@@ -1,11 +1,7 @@
 <?php 
 try {
-echo $_POST['id'];
-echo $_POST['reponse'];
-echo $_POST['statut'];
-
 include("connect.php");
-$requete = "INSERT INTO miseajour_entreprise VALUES (:id_lien, NOW(), :statut, :justification)";
+$requete = "INSERT INTO miseajour_entreprise VALUES (:id_lien, :date_update, :statut, :justification)";
 
 if(!$prepare_requete = $connect_mysql->prepare($requete))
 {
@@ -15,10 +11,11 @@ if(!$prepare_requete = $connect_mysql->prepare($requete))
 $id = htmlspecialchars($_POST['id']);
 $reponse = htmlspecialchars($_POST['reponse']);
 $statut = htmlspecialchars($_POST['statut']);
+$date = htmlspecialchars($_POST['date']);
 
 
 
-if(!$prepare_requete->execute(array(':id_lien' => $id, ':statut' => $statut, ':justification' => $reponse)))
+if(!$prepare_requete->execute(array(':id_lien' => $id, ':date_update'=> $date, ':statut' => $statut, ':justification' => $reponse)))
 {
 	echo "Erreur";
 }

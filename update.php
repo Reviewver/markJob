@@ -23,6 +23,10 @@
 			<label for="non">Non</label>
 			<input name="statut" type="radio" value="0" id="non">
 			</div>
+			<div class="form-groupe col-sm-12">
+			<label for="date">Date</label>
+			<input name="date" id="date" value="<?php echo date("Y-m-d") ?>" type="date">
+			</div>
 			<button class="btn btn-primary" type="submit">Enregistrer</button>
             </form>
         </div>
