@@ -111,4 +111,5 @@ $menu->add_item("Demande entreprise","index.php");
 $menu->add_item("Liste demande", "liste_demande.php");
 $menu->add_item("Entretien téléphonique","entretien.php");
 $menu->add_item("Exporter les demandes", "export.php");
+$menu->add_item("A propos", "about.php");
 $menu->insert();
