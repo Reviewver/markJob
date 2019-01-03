@@ -19,9 +19,9 @@
 			</div>
 			<div class="form-groupe col-sm-12">
 			<label for="oui">Oui</label>
-			<input name="statut" type="radio" value="1" id="oui">
+			<input name="statut" type="radio" value="2" id="oui">
 			<label for="non">Non</label>
-			<input name="statut" type="radio" value="0" id="non">
+			<input name="statut" type="radio" value="1" id="non">
 			</div>
 			<div class="form-groupe col-sm-12">
 			<label for="date">Date</label>
