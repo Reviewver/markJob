@@ -1,7 +1,12 @@
 <?php
-$user = "root";
-$pass = "";
+$dsn = "mysql:host=localhost;dbname=base_envoie_cv";
+$user = "web";
+$pass = "web";
 
-$connect_mysql = new PDO('mysql:host=localhost;dbname=base_envoie_cv',$user, $pass);
+try {
+    $connect_mysql = new PDO($dsn, $user, $pass);
+} catch (PDOException $e) {
+    echo 'Connexion échouée : ' . $e->getMessage();
+}
 
 ?>
