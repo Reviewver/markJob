@@ -10,7 +10,8 @@ $connect_mysql->query($requete_create_table);
 
 if(!$prepare_requete = $connect_mysql->prepare($requete_send_data))
 {
-	echo "Erreur";
+	echo "\nPDO::errorInfo():\n";
+   print_r($prepare_requete->errorInfo());
 }
 $name_company = htmlspecialchars($_POST['company_name']);
 $url_company = htmlspecialchars($_POST['company_url']);
@@ -20,7 +21,8 @@ $email = htmlspecialchars($_POST['company_email']);
 $send = htmlspecialchars($_POST['company_send']);
 if(!$prepare_requete->execute(array(':company_name' => $name_company, ':company_address' => $address_company, ':company_phone' => $company_phone, ':email' => $email, ':company_url' => $url_company, ':send' => $send, ':statut' => "En attente de réponse")))
 {
-	echo "Erreur";
+	echo "\nPDO::errorInfo():\n";
+   print_r($prepare_requete->errorInfo());
 }
 else
 {
