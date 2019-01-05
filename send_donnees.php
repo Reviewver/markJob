@@ -4,7 +4,7 @@ try {
 include("connect.php");
 
 $requete_create_table = 'CREATE TABLE demande_entreprise (nom VARCHAR(100), address VARCHAR(100), phone VARCHAR(100), email VARCHAR(100) ,url VARCHAR(2083), send VARCHAR(100), date DATE, statut VARCHAR(100))';
-$requete_send_data = 'INSERT INTO demande_entreprise VALUES (:company_name, :company_address, :company_phone, :email, :company_url, :send, NOW(), :statut) ';
+$requete_send_data = 'INSERT INTO demande_entreprise VALUES ("", :company_name, :company_address, :company_phone, :email, :company_url, :send, NOW(), :statut) ';
 
 $connect_mysql->query($requete_create_table);
 
