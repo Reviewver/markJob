@@ -30,6 +30,7 @@
 			<tbody>
 			<?php
 			include("connect.php");
+			include("statut.php");
 			$requete_display_data = 'SELECT * FROM `demande_entreprise`';
 			$requete_display = 'SELECT * FROM miseajour_entreprise WHERE id_lien=?';
 $prep = $connect_mysql->prepare($requete_display);
@@ -54,21 +55,7 @@ $prep = $connect_mysql->prepare($requete_display);
 				}
 				$statut = $prep->fetch(PDO::FETCH_ASSOC);
 							?>
-				<td><img id="iconeStatut" src="<?php 
-				if($statut['statut'] == 0)
-				{
-					echo "img/wait.svg";
-				}
-				else if($statut['statut'] == 1)
-				{
-					echo "img/error.png";
-				}				
-				else if($statut['statut'] == 2)
-				{
-					echo "img/ok.svg";
-				}
-				
-				?>"></td><?php
+				<td><?php display_statut($statut['statut']); ?></td><?php
 				print "<td>";
 				print $statut['justification'];
 				print "</td>";

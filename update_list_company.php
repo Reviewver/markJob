@@ -8,6 +8,7 @@
 	<body>
 <?php
 include("connect.php");
+include("statut.php");
 $requete_display = 'SELECT * FROM miseajour_entreprise WHERE id_lien=?';
 $prep = $connect_mysql->prepare($requete_display);
 if(!$prep->bindParam(1, $_POST['id'], PDO::PARAM_INT))
@@ -36,21 +37,7 @@ if(!$prep->bindParam(1, $_POST['id'], PDO::PARAM_INT))
 				foreach($tabl as $pass)
 				{
 				?><tr><td><?php echo date('d/m/Y',strtotime($pass['date'])) ?></td><td><?php echo $pass['justification']; ?></td>
-				<td><img id="iconeStatut" src="<?php 
-				if($pass['statut'] == 0)
-				{
-					echo "img/wait.svg";
-				}
-				else if($pass['statut'] == 1)
-				{
-					echo "img/error.png";
-				}				
-				else if($pass['statut'] == 2)
-				{
-					echo "img/ok.svg";
-				}
-				
-				?>"></td>
+				<td><?php display_statut($pass['statut']); ?></td>
 				</tr><?php 
 				}
 				?></tbody></table>
