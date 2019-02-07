@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+ database:
+  image: "mariadb"
+  environment:
+   - MYSQL_ROOT_PASSWORD=root
+   - MYSQL_DATABASE=base_envoie_cv
+ apache:
+  build: .
+  links: 
+   - database:database
