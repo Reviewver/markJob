@@ -9,4 +9,5 @@ php-mysql
 EXPOSE 80
 RUN rm /var/www/html/index.html
 ADD . /var/www/html/
+RUN chmod 777 /var/www/html/
 CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
