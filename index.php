@@ -1,5 +1,6 @@
 <?php
 	include "gui/textbox.php";
+	include "gui/textboxvalue.php";
 	include "gui/button.php";
 ?> 
 <html>
@@ -52,16 +53,14 @@
 				?>
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
-			
 			<form action="save_mail.php" method="post"/>
-			<div class="form-group">
-			<label for="objet">Objet du mail : </label>
-			<input class="form-control" id="objet" name="objetmail" value="<?php include("objet_mail.txt"); ?>"/>
-			</div>
-			<div class="form-group">
-			<label for="to-copy">Contenue du mail : </label>
-			<textarea rows="10" class="form-control" id="to-copy" name="mail"><?php include("mail.txt"); ?></textarea>
-			</div>
+			
+			<?php
+			$textboxvalue = new Gui\TextBoxValue("Objet du mail", "objetmail", "objet_mail.txt");
+			$textboxvalue->insert();
+			$textboxvalue1 = new Gui\TextBoxValue("Contenue du mail", "contenuemail", "mail.txt");
+			$textboxvalue1->insert();
+			?>
 			<button type="submit" class="btn btn-primary" type="button">Sauvegarder le mail</button>
 			</form>
 		</div>
