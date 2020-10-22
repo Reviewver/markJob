@@ -1,12 +1,24 @@
 version: '2'
 
 services:
- database:
-  image: "mariadb"
+ db:
+  image: mariadb
   environment:
    - MYSQL_ROOT_PASSWORD=root
    - MYSQL_DATABASE=base_envoie_cv
- apache:
+ stock:
   build: .
+  ports:
+   - "80:80"
   links: 
-   - database:database
+   - db
+  volumes:
+   - .:/var/www/html
+ myadmin:
+  image: phpmyadmin/phpmyadmin
+  ports:
+   - "8080:80"
+  depends_on:
+   - db
+
+ 
