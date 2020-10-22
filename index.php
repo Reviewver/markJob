@@ -1,5 +1,5 @@
 <?php
-	include "gui/input.php";
+	include "gui/textbox.php";
 ?> 
 <html>
 	<head>
