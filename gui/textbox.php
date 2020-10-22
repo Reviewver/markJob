@@ -9,6 +9,7 @@ class TextBox
 	function __construct($tile, $id)
 	{
 		$this->title = $tile;
+		$this->id = $id;
 	}
 	
 	function insert()
