@@ -1,5 +1,6 @@
 <?php
 	include "gui/textbox.php";
+	include "gui/button.php";
 ?> 
 <html>
 	<head>
@@ -41,9 +42,14 @@
 						<option value="Site web">par site web</option>
 					</select>
 				</div>
-				<button class="btn btn-primary" id="copyEmail" type="button">Copier l'adresse email</button>
-				<button class="btn btn-primary" id="copyObjet" type="button">Copier l'objet de l'e-mail</button>
-				<button class="btn btn-primary" id="copy" type="button">Copier l'e-mail</button>
+				<?php
+					$button = new Gui\Button("Copier l'adresse email", "copyEmail");		
+					$button->insert();		
+					$button1 = new Gui\Button("Copier l'objet de l'e-mail", "copyObjet");		
+					$button1->insert();		
+					$button2 = new Gui\Button("Copier l'e-mail", "copy");		
+					$button2->insert();	
+				?>
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
 			
