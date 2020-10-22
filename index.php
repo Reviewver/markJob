@@ -1,3 +1,6 @@
+<?php
+	include "gui/input.php";
+?> 
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -14,26 +17,22 @@
 			</header>
 
 			<form action="send_donnees.php" method="post"/>
-				<div class="form-group"/>
-					<label for="company_name">Nom de l'entreprise : </label>
-					<input name="company_name" class="form-control" id="company_name" type="text"/>
-				</div>
-				<div class="form-group"/>
-					<label for="company_address">Adresse de l'entreprise : </label>
-					<input name="company_address" class="form-control" id="company_address"/>
-				</div>
-				<div class="form-group"/>
-					<label for="company_url">Site web de l'entreprise : </label>
-					<input name="company_url" class="form-control" id="company_url" type="url"/>
-				</div>
-				<div class="form-group"/>
-					<label for="company_phone">Téléphone de l'entreprise : </label>
-					<input name="company_phone" class="form-control" id="company_phone" type="tel"/>
-				</div>
-				<div class="form-group"/>
-					<label for="company_email">Mail de l'entreprise : </label>
-					<input name="company_email" class="form-control" id="company_email" type="email"/>
-				</div>
+				<?php 
+				$textbox = new Gui\TextBox("Nom de l'entreprise", "company_name");
+				$textbox->insert();
+				
+				$textbox1 = new Gui\TextBox("Adresse de l'entreprise", "company_address");
+				$textbox1->insert();
+				
+				$textbox2 = new Gui\TextBox("Site web de l'entreprise", "company_url");
+				$textbox2->insert();
+				
+				$textbox3 = new Gui\TextBox("Téléphone de l'entreprise", "company_phone");
+				$textbox3->insert();
+				
+				$textbox4 = new Gui\TextBox("Mail de l'entreprise", "company_email");
+				$textbox4->insert();
+				?>
 				<div class="form-group"/>
 				<label for="envoie">Envoie : </label>
 					<select name="company_send" id="envoie" class="form-control">
