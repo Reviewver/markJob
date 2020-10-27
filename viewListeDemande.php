@@ -1,17 +1,9 @@
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Affichage des demandes en cours</title>
-		<link rel="stylesheet" type="text/css" href="bootstrap-4.1.3-dist/css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="index.css"/>
-	</head>
-	<body>
+<?php 
+$titre = 'EnvoieCV';
+$subtitle = 'Affichage des demandes au entreprises';
+?>
+<?php ob_start(); ?>
 		<div class="container">
-
-			<header>
-				<h1>Affichage des demandes en cours</h1>
-				<?php include("menu.php"); ?>
-			</header>
 			<table class="table table-striped">
 			<thead>
 				<tr>
@@ -57,4 +49,5 @@
 				</table>
 
 		</div>
-	</body>
+<?php $contenu = ob_get_clean(); ?>
+<?php require 'gabaris.php'; ?>
