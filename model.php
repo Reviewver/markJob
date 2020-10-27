@@ -99,4 +99,75 @@ function insertMiseAJourEntreprise($id, $response, $statut, $date)
 		die();
 	}
 }
+
+function export_csv($data, $filename)
+{
+	header("Content-Type: text/plain");
+	header("Content-disposition: attachment; filename=" . $filename . ".csv");
+
+	$out = fopen('PHP://output', 'w');
+	foreach($data as &$value)
+	{
+		fputcsv($out, $value);
+	}
+	fclose($out);
+}
+
+function getExport($nom, $adresse, $phone, $email, $url, $send, $date, $statut)
+{
+			include("connect.php");
+			$sql = 'SELECT * FROM `demande_entreprise`';
+			$req = $connect_mysql->prepare($sql);
+			$req->execute();
+					if(isset($nom)&&isset($adresse)&&isset($phone)&&isset($email)&&isset($url)&&isset($send)&&isset($date)&&isset($statut))
+			{
+			$tableau = $req->fetchAll(PDO::FETCH_ASSOC);
+			}
+			else
+			{
+			$tableau = [];
+			$colonne = [];
+			while ($row = $req->fetch())
+			{	
+					if(isset($nom))
+					{
+					$colonne[] = $row["nom"];			       
+					}
+					if(isset($adresse))
+					{
+					$colonne[] = $row["address"];
+					}
+					if(isset($phone))
+					{
+					$colonne[] = $row["phone"];
+					}
+					if(isset($email))
+					{
+					$colonne[] = $row["email"];
+					}
+					if(isset($url))
+					{
+					$colonne[] = $row["url"];
+					}
+					if(isset($send))
+					{
+					$colonne[] = $row["send"];
+					}
+					if(isset($date))
+					{
+					$colonne[] = $row["date"];
+					}
+					if(isset($statut))
+					{
+					$colonne[] = $row["statut"];
+					}
+					$tableau[] = $colonne;
+				       $colonne = "";
+
+    			}
+			$req->closeCursor();
+			
+			return $tableau;
+	}
+	}
 ?>	
