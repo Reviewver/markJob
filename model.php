@@ -32,4 +32,15 @@ function getDemandesEntreprisesStatus($demandes)
 	
 	return $demandes;
 }
+
+function saveMail($mailTexte, $mailObjet)
+{
+	$mailFile = fopen("mail.txt", "w") or die("Unable to open file!");
+	fwrite($mailFile, $mailTexte);
+	fclose($mailFile);
+
+	$objetFile = fopen("objet_mail.txt", "w") or die("Unable to open file!");
+	fwrite($objetFile, $mailObjet);
+	fclose($objetFile);
+}
 ?>	
