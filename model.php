@@ -43,4 +43,11 @@ function saveMail($mailTexte, $mailObjet)
 	fwrite($objetFile, $mailObjet);
 	fclose($objetFile);
 }
+
+function savePenseBete($penseBeteTexte)
+{
+	$File = fopen("pensebete.txt", "w") or die("Unable to open file!");
+	fwrite($File, $penseBeteTexte);
+	fclose($File);
+}
 ?>	
