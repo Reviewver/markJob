@@ -108,9 +108,9 @@ for($position=0; $position < count($this->_nameListe); $position++)
 }
 $menu = new Menu;
 $menu->add_item("Demande entreprise","index.php");
-$menu->add_item("Liste demande", "liste_demande.php");
-$menu->add_item("Entretien téléphonique","entretien.php");
-$menu->add_item("Exporter les demandes", "export.php");
-$menu->add_item("Importer un CV", "uploadCV.php");
-$menu->add_item("A propos", "about.php");
+$menu->add_item("Liste demande", "index.php?action=demande");
+$menu->add_item("Entretien téléphonique","index.php?action=entretient");
+$menu->add_item("Exporter les demandes", "index.php?action=export");
+$menu->add_item("Importer un CV", "index.php?action=import");
+$menu->add_item("A propos", "index.php?action=about");
 $menu->insert();
