@@ -73,5 +73,14 @@ htmlspecialchars($_POST['statut']),
 htmlspecialchars($_POST['date'])
 );
 }
+
+function deleteCompany()
+{
+	include "model.php";
+	if(suppression_company($_POST['id'], $connect_mysql))
+	{
+     		header('Location: index.php?action=demande');
+	}
+}
 ?>
 

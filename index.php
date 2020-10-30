@@ -38,6 +38,10 @@ if(isset($_GET['action']))
 	{
 		saveUpdateCompany();
 	}
+	else if($_GET['action'] == "delete")
+	{
+		deleteCompany();
+	}
 }
 else
 {
