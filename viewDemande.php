@@ -9,7 +9,7 @@ $subtitle = 'Affichage des demandes au entreprises';
 ?>
 <?php ob_start(); ?>
 <div class="container">
-			<form action="send_donnees.php" method="post"/>
+			<form action="index.php?action=create_demande" method="post"/>
 				<?php 
 				$textbox = new Gui\TextBox("Nom de l'entreprise", "company_name");
 				$textbox->insert();

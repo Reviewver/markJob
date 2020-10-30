@@ -82,5 +82,11 @@ function deleteCompany()
      		header('Location: index.php?action=demande');
 	}
 }
+
+function createCompany()
+{
+	include "model.php";
+	createDemandeCompany();
+}
 ?>
 

@@ -42,6 +42,10 @@ if(isset($_GET['action']))
 	{
 		deleteCompany();
 	}
+	else if($_GET['action'] == "create_demande")
+	{
+		createCompany();
+	}
 }
 else
 {
