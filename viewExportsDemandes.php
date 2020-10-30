@@ -4,7 +4,7 @@ $subtitle = 'Exporter les demandes';
 ?>
 <?php ob_start(); ?>
 <div class="container">
-		<form method="post" action="save.php"/>
+		<form method="post" action="index.php?action=exportcsv"/>
 		<div id="colonne">
 		<div class="form-check">
 		<input id="nom" name="nom" value="nom" type="checkbox">

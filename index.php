@@ -14,6 +14,10 @@ if(isset($_GET['action']))
 	{
 		displayExportDemand();	
 	}
+	else if($_GET['action'] == "exportcv")
+	{
+		exportListe();
+	}
 	else if($_GET['action'] == "import")
 	{
 		displayImportCV();

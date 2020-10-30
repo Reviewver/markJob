@@ -1,4 +1,5 @@
 <?php
+
 function getDemandesEntreprises()
 {
 	include("connect.php");
