@@ -114,6 +114,26 @@ function export_csv($data, $filename)
 	fclose($out);
 }
 
+function getResponseCompany()
+{
+	include("connect.php");
+	$requete_display = 'SELECT * FROM miseajour_entreprise WHERE id_lien=?';
+	$prep = $connect_mysql->prepare($requete_display);
+	if(!$prep->bindParam(1, $_POST['id'], PDO::PARAM_INT))
+	{
+		echo "Problème du passage des paramètres à la requête";
+	}
+
+	if(!$prep->execute())
+	{
+		echo "Problème d'execution";
+	}
+
+	$tabl = $prep->fetchAll(PDO::FETCH_ASSOC);
+
+	return $tabl;
+}
+
 function getExport($nom, $adresse, $phone, $email, $url, $send, $date, $statut)
 {
 			include("connect.php");

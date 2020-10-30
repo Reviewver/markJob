@@ -48,5 +48,13 @@ function exportListe()
 
 	export_csv($tableau,"entreprise");
 }
+
+// Affichage des réponse de l'entreprise
+function displayResponseCompany()
+{
+	include "model.php";
+	$tabl =	getResponseCompany(); 
+	include "viewDisplayResponseCompany.php";
+}
 ?>
 

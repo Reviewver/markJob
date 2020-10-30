@@ -26,6 +26,10 @@ if(isset($_GET['action']))
 	{
 		displayAbout();
 	}
+	else if($_GET['action'] == "seechange")
+	{
+		displayResponseCompany();
+	}
 }
 else
 {

@@ -39,7 +39,7 @@ $subtitle = 'Affichage des demandes au entreprises';
 				print "</td>";
 				?><td>
 				<form action="update.php" method="POST"><input type="hidden" name="id" value="<?php echo "".$demande['ID']."" ?>"></input><input type="hidden" name="name" value="<?php echo "".$demande['nom']."" ?>"></input><button class="btn btn-primary">Mise à jour</button></form>
-				<form action="update_list_company.php" method="POST"><input type="hidden" name="id" value="<?php echo "".$demande['ID']."" ?>"></input><input type="hidden" name="name" value="<?php echo "".$demande['nom']."" ?>"></input><button class="btn btn-primary">Voir les changement</button></form>
+				<form action="index.php?action=seechange" method="POST"><input type="hidden" name="id" value="<?php echo "".$demande['ID']."" ?>"></input><input type="hidden" name="name" value="<?php echo "".$demande['nom']."" ?>"></input><button class="btn btn-primary">Voir les changement</button></form>
 				<form action="delete_company.php" method="POST"><input type="hidden" name="id" value="<?php echo "".$demande['ID']."" ?>"></input><button class="btn btn-danger">Supprimer</button></form>
 				</td><?php
 				print "</tr>";
