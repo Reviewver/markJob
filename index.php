@@ -30,6 +30,14 @@ if(isset($_GET['action']))
 	{
 		displayResponseCompany();
 	}
+	else if($_GET['action'] == "updatecompany")
+	{
+		displayUpdateCompany();
+	}
+	else if($_GET['action'] == "saveupdate")
+	{
+		saveUpdateCompany();
+	}
 }
 else
 {

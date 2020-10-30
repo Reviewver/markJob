@@ -4,7 +4,7 @@ $subtitle = 'Mise à jour de demande';
 ?>
 <?php ob_start(); ?>
 		<div class="container">
-            <form class="row" action="save_update.php" method="post">
+            <form class="row" action="index.php?action=saveupdate" method="post">
 			<input type="hidden" name="id" value="<?php echo "".$_POST['id']."" ?>"></input>
 			<div class="form-groupe col-sm-12">
 			<label for="reponse">Réponse</label>

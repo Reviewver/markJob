@@ -56,5 +56,22 @@ function displayResponseCompany()
 	$tabl =	getResponseCompany(); 
 	include "viewDisplayResponseCompany.php";
 }
+
+// Affichage de la page pour mettre à jour une demande
+function displayUpdateCompany()
+{
+	include "viewUpdateDemande.php";
+}
+
+function saveUpdateCompany()
+{
+	include "model.php";
+	insertMiseAJourEntreprise(
+htmlspecialchars($_POST['id']),
+htmlspecialchars($_POST['reponse']),
+htmlspecialchars($_POST['statut']),
+htmlspecialchars($_POST['date'])
+);
+}
 ?>
 
