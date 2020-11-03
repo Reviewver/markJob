@@ -1,39 +1,39 @@
 <?php
 function displayAbout()
 {
-	include "viewAbout.php";
+	include "Vue/viewAbout.php";
 }
 
 function displayImportCV()
 {
-	include "viewUploadCV.php";
+	include "Vue/viewUploadCV.php";
 }
 
 function displayPenseBete()
 {
-	include "viewPenseBeteEntretien.php";
+	include "Vue/viewPenseBeteEntretien.php";
 }
 
 function listeDemande()
 {
-	include "model.php";
+	include "Modele/model.php";
 	$demandes = getDemandesEntreprises();
-	include "viewListeDemande.php";
+	include "Vue/viewListeDemande.php";
 }
 
 function displayExportDemand()
 {
-	include "viewExportsDemandes.php";
+	include "Vue/viewExportsDemandes.php";
 }
 
 function demande()
 {
-	include "viewDemande.php";
+	include "Vue/viewDemande.php";
 }
 
 function exportListe()
 {
-	include "model.php";
+	include "Modele/model.php";
 
 	$tableau = getExport(
 	$_POST["nom"], 
@@ -52,20 +52,20 @@ function exportListe()
 // Affichage des réponse de l'entreprise
 function displayResponseCompany()
 {
-	include "model.php";
+	include "Modele/model.php";
 	$tabl =	getResponseCompany(); 
-	include "viewDisplayResponseCompany.php";
+	include "Vue/viewDisplayResponseCompany.php";
 }
 
 // Affichage de la page pour mettre à jour une demande
 function displayUpdateCompany()
 {
-	include "viewUpdateDemande.php";
+	include "Vue/viewUpdateDemande.php";
 }
 
 function saveUpdateCompany()
 {
-	include "model.php";
+	include "Modele/model.php";
 	insertMiseAJourEntreprise(
 htmlspecialchars($_POST['id']),
 htmlspecialchars($_POST['reponse']),
@@ -76,7 +76,7 @@ htmlspecialchars($_POST['date'])
 
 function deleteCompany()
 {
-	include "model.php";
+	include "Modele/model.php";
 	if(suppression_company($_POST['id'], $connect_mysql))
 	{
      		header('Location: index.php?action=demande');
@@ -85,7 +85,7 @@ function deleteCompany()
 
 function createCompany()
 {
-	include "model.php";
+	include "Modele/model.php";
 	createDemandeCompany();
 }
 ?>
