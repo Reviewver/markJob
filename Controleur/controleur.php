@@ -63,6 +63,13 @@ function displayUpdateCompany()
 	include "Vue/viewUpdateDemande.php";
 }
 
+// Sauvegarde mail
+function displaySaveMail()
+{
+include "Modele/model.php"; 
+saveMail($_POST['mail'], $_POST['objetmail']);
+}
+
 function saveUpdateCompany()
 {
 	include "Modele/model.php";

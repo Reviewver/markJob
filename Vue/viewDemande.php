@@ -44,7 +44,7 @@ $subtitle = 'Affichage des demandes au entreprises';
 				?>
 				<button type="submit" class="btn btn-primary">Enregistrer</button>
 			</form>
-			<form action="save_mail.php" method="post"/>
+			<form action="index.php?action=save_mail" method="post"/>
 			
 			<?php
 			$textboxvalue = new Gui\TextBoxValue("Objet du mail", "objetmail", "objet_mail.txt");

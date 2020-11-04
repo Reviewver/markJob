@@ -46,6 +46,10 @@ if(isset($_GET['action']))
 	{
 		createCompany();
 	}
+	else if($_GET['action'] == "save_mail")
+	{
+		displaySaveMail();	
+	}
 }
 else
 {
