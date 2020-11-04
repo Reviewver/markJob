@@ -50,6 +50,10 @@ if(isset($_GET['action']))
 	{
 		displaySaveMail();	
 	}
+	else if($_GET['action'] == "save_pensebete")
+	{
+		displaySavePenseBete();
+	}
 }
 else
 {

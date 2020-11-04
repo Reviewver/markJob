@@ -2,7 +2,7 @@
 $titre = 'EnvoieCV';
 $subtitle = 'Entretien téléphonique';
 ?>
-            <form action="save_pensebete.php" method="post"/>
+            <form action="index.php?action=save_pensebete" method="post"/>
 			<div class="form-group">
 			<label>Contenue du pense bête : </label>
 			<textarea rows="10" class="form-control"  name="pensebete"><?php include("pensebete.txt"); ?></textarea>

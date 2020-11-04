@@ -70,6 +70,12 @@ include "Modele/model.php";
 saveMail($_POST['mail'], $_POST['objetmail']);
 }
 
+function displaySavePenseBete()
+{
+include "Modele/model.php";
+savePenseBete($_POST['pensebete']);
+}
+
 function saveUpdateCompany()
 {
 	include "Modele/model.php";
