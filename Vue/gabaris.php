@@ -2,8 +2,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title><?= $titre ?> - <?= $subtitle ?></title>
-		<link rel="stylesheet" type="text/css" href="bootstrap-4.1.3-dist/css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<link rel="stylesheet" type="text/css" href="Contenue/bootstrap-4.1.3-dist/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="Contenue/index.css"/>
 	</head>
 	<body>
 	<header>
