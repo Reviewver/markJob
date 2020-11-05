@@ -1,18 +1,32 @@
 <?php
 
+function getBdd()
+{
+try {
+	$dsn = "mysql:host=db;dbname=base_envoie_cv";
+	$user = "root";
+	$pass = "root";
+    $bdd = new PDO($dsn, $user, $pass);
+    
+    return $bdd;
+} catch (PDOException $e) {
+    echo 'Connexion échouée : ' . $e->getMessage();
+}
+}
+
 function getDemandesEntreprises()
 {
-	include("connect.php");
+	$bdd = getBdd();
 	$requete_display_data = 'SELECT * FROM `demande_entreprise`';
-	$demandes = $connect_mysql->query($requete_display_data);
+	$demandes = $bdd->query($requete_display_data);
 	return $demandes;
 }
 
 function getDemandesEntreprisesStatus($demandes)
 {
-	include("connect.php");
+	$bdd = getBdd();
 	$requete_display = 'SELECT * FROM miseajour_entreprise WHERE id_lien=?';
-	$prep = $connect_mysql->prepare($requete_display);
+	$prep = $bdd->prepare($requete_display);
 	foreach ($demandes as $demande)
 	{
 		echo $demande["ID"];
@@ -54,11 +68,11 @@ function savePenseBete($penseBeteTexte)
 
 function suppression_company($ID,$connect)
 {
-        include("connect.php");
+        $bdd = getBdd();
         
         $requete_delete_table = 'DELETE FROM `demande_entreprise` WHERE ID=?';
         
-        if(!$prepare_requete = $connect->prepare($requete_delete_table))
+        if(!$prepare_requete = $bdd->prepare($requete_delete_table))
         {
 	        return 0;
         }   
@@ -78,10 +92,10 @@ function suppression_company($ID,$connect)
 function insertMiseAJourEntreprise($id, $response, $statut, $date)
 { 
 	try {
-	include("connect.php");
+	$bdd = getBdd();
 	$requete = "INSERT INTO miseajour_entreprise VALUES (:id_lien, :date_update, :statut, :justification)";
 
-	if(!$prepare_requete = $connect_mysql->prepare($requete))
+	if(!$prepare_requete = $bdd->prepare($requete))
 	{
 		echo "Erreur";
 	}
@@ -116,9 +130,9 @@ function export_csv($data, $filename)
 
 function getResponseCompany()
 {
-	include("connect.php");
+	$bdd = getBdd();
 	$requete_display = 'SELECT * FROM miseajour_entreprise WHERE id_lien=?';
-	$prep = $connect_mysql->prepare($requete_display);
+	$prep = $bdd->prepare($requete_display);
 	if(!$prep->bindParam(1, $_POST['id'], PDO::PARAM_INT))
 	{
 		echo "Problème du passage des paramètres à la requête";
@@ -139,14 +153,14 @@ function createDemandeCompany()
 {
 	
 	try {
-include("connect.php");
+$bdd = getBdd();
 
 $requete_create_table = 'CREATE TABLE demande_entreprise (nom VARCHAR(100), address VARCHAR(100), phone VARCHAR(100), email VARCHAR(100) ,url VARCHAR(2083), send VARCHAR(100), date DATE, statut VARCHAR(100))';
 $requete_send_data = 'INSERT INTO demande_entreprise (nom, address, phone, email, url, send, date, statut) VALUES (:company_name, :company_address, :company_phone, :email, :company_url, :send, NOW(), :statut) ';
 
-$connect_mysql->query($requete_create_table);
+$bdd->query($requete_create_table);
 
-if(!$prepare_requete = $connect_mysql->prepare($requete_send_data))
+if(!$prepare_requete = $bdd->prepare($requete_send_data))
 {
 	echo "\nPDO::errorInfo():\n";
    print_r($prepare_requete->errorInfo());
@@ -176,9 +190,9 @@ else
 
 function getExport($nom, $adresse, $phone, $email, $url, $send, $date, $statut)
 {
-			include("connect.php");
+			$bdd = getBdd();
 			$sql = 'SELECT * FROM `demande_entreprise`';
-			$req = $connect_mysql->prepare($sql);
+			$req = $bdd->prepare($sql);
 			$req->execute();
 					if(isset($nom)&&isset($adresse)&&isset($phone)&&isset($email)&&isset($url)&&isset($send)&&isset($date)&&isset($statut))
 			{
