@@ -155,7 +155,7 @@ function createDemandeCompany($demande)
 	try {
 $bdd = getBdd();
 
-$requete_create_table = 'CREATE TABLE demande_entreprise (nom VARCHAR(100), address VARCHAR(100), phone VARCHAR(100), email VARCHAR(100) ,url VARCHAR(2083), send VARCHAR(100), date DATE, statut VARCHAR(100))';
+$requete_create_table = 'CREATE TABLE demande_entreprise (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, nom VARCHAR(100), address VARCHAR(100), phone VARCHAR(100), email VARCHAR(100) ,url VARCHAR(2083), send VARCHAR(100), date DATE, statut VARCHAR(100))';
 $requete_send_data = 'INSERT INTO demande_entreprise (nom, address, phone, email, url, send, date, statut) VALUES (:company_name, :company_address, :company_phone, :email, :company_url, :send, NOW(), :statut) ';
 
 $bdd->query($requete_create_table);
