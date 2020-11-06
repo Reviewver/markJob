@@ -166,7 +166,7 @@ if(!$prepare_requete = $bdd->prepare($requete_send_data))
    print_r($prepare_requete->errorInfo());
 }
 
-if(!$prepare_requete->execute(array(':company_name' => $demande->getCompanyName(), ':company_address' => $demande->getCompanyAdresse(), ':company_phone' => $demande->getCompanyPhone(), ':email' => $demande->getCompanyMail(), ':company_url' => $demande->getCompanyWebSite(), ':send' => $demande->getCompanyEnvoie(), ':statut' => "En attente de réponse")))
+if(!$prepare_requete->execute(array(':company_name' => $demande->getCompanyName(), ':company_address' => $demande->getCompanyAdresse(), ':company_phone' => $demande->getCompanyPhone(), ':email' => $demande->getCompanyMail(), ':company_url' => $demande->getCompanyWebSite(), ':send' => $demande->getCompanyEnvoie(), ':statut' => $demande->getStatus())))
 {
 	echo "\nPDO::errorInfo():\n";
    print_r($prepare_requete->errorInfo());

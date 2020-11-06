@@ -19,6 +19,9 @@ class Demande
 	// Type d'envoi de la demande
 	private $company_envoie;
 	
+	// Statut de la demande
+	private $status;
+	
 	function __construct($company_name,$company_adresse,$company_website,$company_phone,$company_mail,$company_envoie)
 	{
 		$this->company_name = $company_name;
@@ -27,8 +30,14 @@ class Demande
 		$this->company_phone = $company_phone;
 		$this->company_mail = $company_mail;
 		$this->company_envoie = $company_envoie;
+		$this->status = "En attente de réponse";
 	}
 	
+	function getStatus()
+	{
+		return $this->status;
+	}
+		
 	function getCompanyName()
 	{
 		return $this->company_name;
