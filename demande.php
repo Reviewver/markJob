@@ -33,6 +33,17 @@ class Demande
 		$this->status = "En attente de réponse";
 	}
 	
+	function __debuginfo()
+	{
+		echo "<p>" . "Nom : " . $this->company_name . "</p>";
+		echo "<p>" . "Adresse : " . $this->company_adresse . "</p>";
+		echo "<p>" . "Website : " . $this->company_website . "</p>";
+		echo "<p>" . "Phone : " . $this->company_phone . "</p>";
+		echo "<p>" . "Mail : " . $this->company_mail . "</p>";
+		echo "<p>" . "Envoie : " . $this->company_envoie . "</p>";
+		echo "<p>" . "Status : " . $this->status . "</p>";
+	}
+	
 	function getStatus()
 	{
 		return $this->status;
