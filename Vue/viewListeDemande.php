@@ -29,7 +29,7 @@ $subtitle = 'Affichage des demandes au entreprises';
 				print "<td>" . $demande['address'] . "</td>";
 				print "<td>" . $demande['phone'] . "</td>";
 				print "<td>" . $demande['email'] . "</td>";
-				?><td><a href="<?php echo $demande['url']?>"><?php echo $row['url']?></a></td><?php
+				?><td><a href="<?php echo $demande['url']?>"><?php echo $demande['url']?></a></td><?php
 				print "<td>" . $demande['send'] . "</td>";
 				print "<td>" . date('d/m/Y',strtotime($demande['date'])) . "</td>";
 							?>
