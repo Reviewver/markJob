@@ -149,7 +149,7 @@ function getResponseCompany()
 }
 
 // Crée une demande pour une entreprise
-function createDemandeCompany()
+function createDemandeCompany($demande)
 {
 	
 	try {
@@ -165,13 +165,8 @@ if(!$prepare_requete = $bdd->prepare($requete_send_data))
 	echo "\nPDO::errorInfo():\n";
    print_r($prepare_requete->errorInfo());
 }
-$name_company = htmlspecialchars($_POST['company_name']);
-$url_company = htmlspecialchars($_POST['company_url']);
-$address_company = htmlspecialchars($_POST['company_address']);
-$company_phone = htmlspecialchars($_POST['company_phone']);
-$email = htmlspecialchars($_POST['company_email']);
-$send = htmlspecialchars($_POST['company_send']);
-if(!$prepare_requete->execute(array(':company_name' => $name_company, ':company_address' => $address_company, ':company_phone' => $company_phone, ':email' => $email, ':company_url' => $url_company, ':send' => $send, ':statut' => "En attente de réponse")))
+
+if(!$prepare_requete->execute(array(':company_name' => $demande->getCompanyName(), ':company_address' => $demande->getCompanyAdresse(), ':company_phone' => $demande->getCompanyPhone(), ':email' => $demande->getCompanyMail(), ':company_url' => $demande->getCompanyWebSite(), ':send' => $demande->getCompanyEnvoie(), ':statut' => "En attente de réponse")))
 {
 	echo "\nPDO::errorInfo():\n";
    print_r($prepare_requete->errorInfo());

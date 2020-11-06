@@ -87,19 +87,21 @@ htmlspecialchars($_POST['date'])
 );
 }
 
-function deleteCompany()
+function deleteCompany($id)
 {
 	include "Modele/model.php";
-	if(suppression_company($_POST['id'], $connect_mysql))
+	echo $id;
+	if(suppression_company($id, $connect_mysql))
 	{
      		header('Location: index.php?action=demande');
 	}
 }
 
-function createCompany()
+function createCompany($demande)
 {
 	include "Modele/model.php";
-	createDemandeCompany();
+	
+	createDemandeCompany($demande);
 }
 ?>
 

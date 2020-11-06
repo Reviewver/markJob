@@ -1,5 +1,6 @@
 <?php
 include "Controleur/controleur.php";
+include "demande.php";
 if(isset($_GET['action'])) 
 {
 	if($_GET['action'] == "demande")
@@ -40,11 +41,13 @@ if(isset($_GET['action']))
 	}
 	else if($_GET['action'] == "delete")
 	{
-		deleteCompany();
+		deleteCompany($_POST['id']);
 	}
 	else if($_GET['action'] == "create_demande")
 	{
-		createCompany();
+		$demande = new Demande ($_POST['company_name'],$_POST['company_address'],	$_POST['company_url'],$_POST['company_phone'],$_POST['company_email'],$_POST['company_send']);
+		
+		createCompany($demande);
 	}
 	else if($_GET['action'] == "save_mail")
 	{
