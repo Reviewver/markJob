@@ -50,11 +50,11 @@ function getDemandesEntreprisesStatus($demandes)
 
 function saveMail($mailTexte, $mailObjet)
 {
-	$mailFile = fopen("mail.txt", "w") or die("Unable to open file!");
+	$mailFile = fopen("mail.txt", "+w");
 	fwrite($mailFile, $mailTexte);
 	fclose($mailFile);
 
-	$objetFile = fopen("objet_mail.txt", "w") or die("Unable to open file!");
+	$objetFile = fopen("objet_mail.txt", "+w");
 	fwrite($objetFile, $mailObjet);
 	fclose($objetFile);
 }
