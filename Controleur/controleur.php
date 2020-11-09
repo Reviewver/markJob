@@ -79,9 +79,9 @@ include "Modele/model.php";
 
 try
 {
-	testParamPost("mail");
+	testParamPost("contenuemail");
 	testParamPost("objetmail");
-	saveMail($_POST['mail'], $_POST['objetmail']);
+	saveMail($_POST['contenuemail'], $_POST['objetmail']);
 
 }
 catch (Exception $e)
