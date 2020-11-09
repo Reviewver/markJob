@@ -20,7 +20,7 @@ class TextBoxValue
 		$text .= $this->id;
 		$text .= '">'; 
 		$text .= $this->title;
-		$text .= '</label><input name="company_name" class="form-control" id="'; 
+		$text .= '</label><input name="' . $this->id . '" class="form-control" id="'; 
 		$text .= $this->id;
 		$text .= '" type="text" value="';
 		$text .= include($file);
