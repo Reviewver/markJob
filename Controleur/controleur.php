@@ -63,11 +63,32 @@ function displayUpdateCompany()
 	include "Vue/viewUpdateDemande.php";
 }
 
+// Vérifie que les paramètre sont présent
+function testParamPost($param)
+{
+	if (!isset($_POST[$param]))
+	{
+		throw new Exception("L'élément POST " . $param . " n'existe pas");
+	}
+}
+
 // Sauvegarde mail
 function displaySaveMail()
 {
 include "Modele/model.php"; 
-saveMail($_POST['mail'], $_POST['objetmail']);
+
+try
+{
+	testParamPost("mail");
+	testParamPost("objetmail");
+	saveMail($_POST['mail'], $_POST['objetmail']);
+
+}
+catch (Exception $e)
+{
+    echo 'Exception reçue : ',  $e->getMessage(), "\n";
+}
+
 }
 
 function displaySavePenseBete()
